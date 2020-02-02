@@ -1,0 +1,127 @@
+//homework 1
+//ex. 1.1
+let x = 3;
+    y = 14;
+let result;
+if (a % b === 0 || b % a === 0) {
+	result = '1'
+} else {
+	result = '0'
+}
+alert (result);
+
+//ex. 1.2
+let x = 18;
+    y = 2;
+let result;
+if (a % b === 0 || b % a === 0) {
+	result = '1'
+} else {
+	result = '0'
+}
+alert (result);
+
+//ex. 1.3
+let x = 7;
+    y = 21;
+let result;
+if (a % b === 0 || b % a === 0) {
+	result = '1'
+} else {
+	result = '0'
+}
+alert (result);
+
+//ex.2.1
+let a = 45;
+    b = 90;
+result = 180 - (a+b);
+alert(result);
+
+//ex.2.2
+let a = 30;
+    b = 30;
+result = 180 - (a+b);
+alert(result);
+
+//ex.2.3
+let a = 75;
+    b = 25;
+result = 180 - (a+b);
+alert(result);
+
+//ex.3.1
+let n = 3;
+nn = 2*n;
+nnn = 3*n;
+alert(String(n) + String(nn) + String(nnn))
+
+//ex.3.2
+let n = 17;
+nn = 2*n;
+nnn = 3*n;
+alert(String(n) + String(nn) + String(nnn))
+
+//ex.3.3
+let n = 100;
+nn = 2*n;
+nnn = 3*n;
+alert(String(n) + String(nn) + String(nnn))
+
+//ex.4.1
+let q = '367';
+let lastChar = q.charAt(q.length-1);
+if (lastChar == 0) {
+   alert(q);
+} else {
+  q = lastChar + q.slice(0,q.length-1);
+  alert (q);
+}
+
+//ex.4.2
+let q = '1002';
+let lastChar = q.charAt(q.length-1);
+if (lastChar == 0) {
+   alert(q);
+} else {
+  q = lastChar + q.slice(0,q.length-1);
+  alert (q);
+}
+
+//ex.4.3
+let q = '250';
+let lastChar = q.charAt(q.length-1);
+if (lastChar == 0) {
+   alert(q);
+} else {
+  q = lastChar + q.slice(0,q.length-1);
+  alert (q);
+}
+
+//ex.4.4
+let q = '8';
+let lastChar = q.charAt(q.length-1);
+if (lastChar == 0) {
+   alert(q);
+} else {
+  q = lastChar + q.slice(0,q.length-1);
+  alert (q);
+}
+
+//ex.5.1
+let w = 45;
+    e = -12;
+    r = 0;
+    t = 3;
+    y = -15;
+result = (w + e + r + t +y)/5;
+alert (result);
+
+//ex.5.2
+let w = 7;
+    e = 52;
+    r = -23;
+    t = 9;
+    y = -81;
+result = (w + e + r + t +y)/5;
+alert (result);
