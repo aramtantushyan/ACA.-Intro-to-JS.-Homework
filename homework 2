@@ -1,0 +1,104 @@
+// Homework 2
+// Ex. 1
+let a = +prompt('enter the 1st number');
+let b = +prompt('enter the 2nd number');
+let c = +prompt('enter the 3rd number');
+let sumOfSigns = Math.sign(a) + Math.sign(b) + Math.sign(c);
+if (a === 0 || b === 0 || c === 0) {
+    alert ('Undefined');
+} else if (sumOfSigns === 1 || sumOfSigns === -3) {
+    alert ('-');
+} else {
+    alert ('+');
+}
+
+// ex.2
+let digit = +prompt('enter a digit');
+let number = +prompt('enter a number');
+if (number.indexOf(digit) === -1) {
+    alert ('No');
+} else {
+    alert('Yes');
+}
+
+// ex.2
+let digit = +prompt('enter a digit');
+let number = +prompt('enter a number');
+let result;
+for (let i=number ; i > 0; i = (i - i%10) / 10 ) {
+    let ld = i%10;
+    if(digit === ld){
+    result = 'Yes';
+    break;
+    } 
+}
+if (result === 'Yes') {
+alert(result);
+} else {
+alert ('No');
+}
+
+// ex. 3
+let number = prompt("enter a number");
+if (!number) {
+    alert ('invalid input');
+} else {
+    let ld = number.substr(number.length-1);
+    let fd = number.substr(0, 1)
+    let numberBody = number.slice(1, number.length-1);
+    if (number.length === 1) {
+        alert (number);
+        } else if (number.length === 2) {
+            alert(`${ld}${fd}`);
+        } else { 
+            alert(`${ld}${numberBody}${fd}`)
+        }
+}
+// ex. 5
+let a = +prompt("enter a");
+let b = +prompt("enter b");
+let c = +prompt("enter c");
+let discriminant = Math.pow(b, 2) - 4*a*c;
+if (a === 0) {
+    alert('Enter valid constants')
+} else if { discriminant < 0){
+    alert('Solution does not exist');
+} else if (discriminant === 0) {    
+    let root = - b / (2 * a);
+    alert (`Solution is ${root}`)
+} else {
+    let root_1 = (-b + Math.sqrt(discriminant))/ (2* a);
+    let root_2 = (-b - Math.sqrt(discriminant))/ (2* a);
+    alert (`Solutions are ${root_1} and ${root_2}`)
+}
+// ex. 6 
+let n = +prompt();
+let i = 0;
+let j = 0;
+if (n % 2 === 0 && !Math.floor(n/10)) {
+    i+=1;
+}
+if (n % 3 === 0 && n %10 ===1) {
+    j+=1;
+} 
+
+// ex. 7
+let name = prompt('Please enter a figure name', "triangle/rectangle");
+if (!name) {
+   alert('Goodbye')
+} else {
+    let figure = name.toLowerCase();
+    let h = +prompt('height of a triangle or side of a rectangle');
+    let b = +prompt('base of a triangle or other side of a rectangle');
+    if (h <= 0 || b <= 0){
+        alert('Please enter only positives')
+    } else if (figure === 'triangle') {
+        let triangle_area = h * b / 2;
+        alert (`Square of the triangle is ${triangle_area}`);
+    } else if (figure === 'rectangle') {
+        let rectangle_area = h * b;
+        alert (`Square of the rectangle is ${rectangle_area}`);
+    } else {
+        alert('Wrong figure name');
+    }
+}
