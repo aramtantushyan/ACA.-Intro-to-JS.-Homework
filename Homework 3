@@ -1,0 +1,93 @@
+// Homework 3
+// ex. 1
+let sentence = "If at _ you don't _, try, try _.";
+let sentenceArr = sentence.split("")
+let wordArray = ['first', 'succeed', 'again'];
+let arrayIndex = 0; 
+// arrayIndex is the index of wordArray that is incremented during every cycle for the next cycle to take the next element
+let result;
+for (let i = 0; i < sentenceArr.length ; i++) {
+    if(sentenceArr[i] == "_") {
+    sentenceArr[i] = wordArray[arrayIndex];
+    arrayIndex++
+    }
+}
+result = sentenceArr.join('');
+console.log(result);
+
+//ex.2
+let mixedArray = [8, 0, 1, 'hey', 12, 5, true, '2', null, 7, 3];
+let newArray = [];
+for (let i = 0; i < mixedArray.length; i++) {
+    if (typeof(mixedArray[i]) == 'number') {
+        if (mixedArray[i] % 2 == 0) {
+        newArray.push(mixedArray[i]);
+        } else {
+        newArray.unshift(mixedArray[i])
+        }    
+    }
+}
+console.log(newArray);
+
+//ex. 2 (other solution - using Array.concat() method)
+let mixedArray = [8, 0, null, true, 5, 'true', 6, '22', 7, 12, 24, 3, 3, 1];
+let oddNumberArray = [];
+let evenNumberArray = [];
+for (let i = 0; i < mixedArray.length; i++) {
+    if (typeof(mixedArray[i]) == 'number') {
+        if (mixedArray[i] % 2 == 0) {
+        evenNumberArray.push(mixedArray[i]);
+        } else {
+        oddNumberArray.push(mixedArray[i])
+        }    
+    }
+}
+let result = oddNumberArray.concat(evenNumberArray);
+console.log(result);
+
+//ex.3
+let number_string_array = [1, 4, 'I am a string', '456', '10', 'hi', 2, 3, 0, 100, '1230', 789];
+let numbers = 0;
+let strings = 0;
+for (let i = 0; i < number_string_array.length; i++) {
+    if(typeof number_string_array[i] == 'number') {
+    //increment 'numbers' counter if array element's type is number
+    numbers++;
+    } else {
+    //increment 'strings' counter if array element's type is not number. In this exercise it can be only string.
+    strings++;
+    }
+}
+console.log(`Numbers: ${numbers}, Strings: ${strings}`)
+
+//ex.4 
+let strArray = ['wish', 'slightly', 'understand', 'longer', 'unexpected', 'heart'];
+let maxLength = -Infinity;
+let minLength = Infinity;
+for (let i = 0; i < strArray.length; i ++) {  
+    if(strArray[i].length > maxLength) {
+    maxLength = strArray[i].length;
+    }
+    if (strArray[i].length < minLength) {
+    minLength = strArray[i].length;
+    }
+}
+console.log(maxLength + minLength)
+
+//ex.5 
+let numberArray = [-1, 0, 1, 2];
+let sum = 0;
+for (let i= 0; i < numberArray.length; i++) {
+    sum += numberArray[i];
+}
+console.log(sum);
+
+//ex.6
+let numArray = [1, 1, 4, 32, 6];
+let newArray = [];
+let product = 0;
+for (let i = 0; i < numArray.length-1; i++) {
+    product = numArray[i] * numArray[i+1];
+    newArray.push(product);
+}
+console.log(newArray);
