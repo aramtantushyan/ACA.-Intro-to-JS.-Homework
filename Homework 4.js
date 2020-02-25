@@ -14,7 +14,7 @@ return initialArray;
       }
 }
 
-//ex.
+//ex. 2
 function AreDigitsSumAndProductDivisible (number) {
 let strNumber = String(number);
 let sum = 0;
