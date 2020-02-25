@@ -37,22 +37,26 @@ let reminder = 0;
 }
 
 //ex.3
-function isMinMaxDiffInArray (array = []) {
-let min = +Infinity;
-let max = -Infinity;
-    for (let i = 0; i < array.length; i++) {
-        if (array[i] > max) {
-        max = array[i];
-        }
-        if (array[i] < min) {
-        min = array[i];
-        }
-    } 
-    if (array.indexOf(max - min) !== -1) {
-       return true;
+function isMinMaxDiffInArray (array) {
+    if (!Array.isArray(array)) {
+    return undefined;
     } else {
-       return false;
-    }
+        let min = +Infinity;
+        let max = -Infinity;
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] > max) {
+                max = array[i];
+                }
+                if (array[i] < min) {
+                min = array[i];
+                }
+            } 
+            if (array.indexOf(max - min) !== -1) {
+               return true;
+            } else {
+               return false;
+            }
+     }
 }
 
 //ex.4
@@ -66,7 +70,7 @@ function findMax (array) {
             max = array[i];
             }
         }
-    return max;
+      return max;
       }
 }
 
