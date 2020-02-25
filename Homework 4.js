@@ -56,17 +56,11 @@ let max = -Infinity;
 }
 
 //ex.4
-function indexOfSecondMax (array = []) {
-let previousMax;
-let maxValue = findMax(array);
-array.splice(array.indexOf(maxValue), 1)
-return array.indexOf(maxValue);
-
-function findMax (array=[]) {
-let max = -Infinity;
-    if (!array) {
+function findMax (array) {
+    if (!Array.isArray(array)) {
     return undefined;
     } else {
+        let max = -Infinity;
         for (let i = 0; i < array.length; i ++) {
             if(array[i] > max) {
             max = array[i];
@@ -75,4 +69,100 @@ let max = -Infinity;
     return max;
       }
 }
+
+function indexOfSecondMax (array) {
+if(!Array.isArray(array)) {
+return undefined;
+} else {
+    let previousMax;
+    let maxValue = findMax(array);
+    delete array[array.indexOf(maxValue)];
+    return array.indexOf(findMax(array));
+ }
+}
+
+//ex.5
+function paddingAndRepeat (array, padding, repeat) {
+    if (!Array.isArray(array) || !Number.isInteger(padding) || !Number.isInteger(repeat)) {
+        return undefined;
+    } else if (padding > array.length) {
+        return 'Invalid padding amount';
+    } else {
+        let firstSubArray = array.slice(0, padding);
+        let lastSubArray = array.slice(array.length-padding);
+        for (let i = 0; i<repeat;i++) {
+            for (let j = padding-1; j >=0  ; j--) {
+                array.unshift(firstSubArray[j]);
+                array.push(lastSubArray[padding-1-j])
+            }
+        }
+      return array;
+      }
+}
+
+//ex.6
+function printRectangle (number) {
+    if(!Number.isInteger(number)) {
+    return undefined;
+    } else {
+        let pattern = '\n';
+        for (let i = 0; i < number; i++) {
+            for (let j = 0; j < number; j++) {
+                pattern += ' * ';
+            }
+        pattern += '\n';
+        }
+       return pattern;      
+      }
+}
+
+// ex.7
+function printRectangleBorders (number) {
+    if(!Number.isInteger(number)) {
+    return undefined;
+    } else {
+        let pattern = '\n';
+        for (let i = 0; i < number; i++) {
+            for (let j = 0; j < number; j++) {
+                if(i==0 || i==number-1 || j==0 || j==number-1) {
+                    pattern += ' * ';
+                } else {
+                    pattern += '   ';
+                  }
+             }
+         pattern += '\n';
+         }
+        return pattern;      
+       }
+}
+
+// ex.8
+function numberCount (number) {
+    if (!Number.isInteger(number)) {
+        return undefined;
+    } else {
+        let result = '';
+        for (let i = 1; i <=number; i++) {
+        result += i;
+        }
+        return result;
+    }
+}
+
+function numberHill (number) {
+    if(!Number.isInteger(number)) {
+        return undefined;
+    } else {
+        let result = '\n';
+            for (let i = 1; i < number*2; i++) {
+                 if(i<=number){
+                     result += numberCount(i);
+                     result += '\n';   
+                 } else {
+                     result += numberCount(number*2-i);
+                     result += '\n';
+                 }                     
+            }
+        return result;    
+       }
 }
